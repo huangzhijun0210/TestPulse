@@ -15,13 +15,14 @@
     "paths": {
       "@/*": [
         "src/*"
-      ] // 可选：路径别名（如 @/App 指向 src/App.tsx）
+      ] // 可选：路径别名
     },
     "outDir": "./dist", // TS 编译输出目录（和 Webpack output 对齐）
     "rootDir": "./src" // 源码根目录
   },
   "include": [
-    "src/**/*" // 要编译的文件（所有 src 下的 .ts/.tsx/.js/.jsx）
+    "src/**/*",
+    "./client.d.ts"
   ],
   "exclude": [
     "node_modules", // 排除 node_modules

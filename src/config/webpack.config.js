@@ -26,6 +26,9 @@ module.exports = {
         ]
     },
     resolve: {
+        alias: {
+            '@': path.resolve(__dirname, '../../src'),
+        },
         extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'], // 优先尝试 .tsx,ts再jsx,js
     },
 }
