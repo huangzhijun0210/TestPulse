@@ -5,6 +5,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 module.exports = {
     entry: path.join(__dirname, '../index.tsx'),
+    stats: {
+        modules: false,
+    },
+    cache: {
+        type: 'filesystem',
+        cacheDirectory: path.resolve(__dirname, '.temp_cache'),
+    },
     plugins: [
         new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
