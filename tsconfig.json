@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "allowJs": true, // ✅ 必须开启：允许 TS 处理 JS/JSX 文件
+    "checkJs": false, // 新手建议 false：关闭对 JS 文件的类型检查（避免额外报错）
+    "target": "ES6", // 编译目标 ES 版本（兼容主流浏览器）
+    "module": "ESNext", // 模块系统（匹配 Webpack 解析）
+    "moduleResolution": "Node", // 按 Node 规则解析模块
+    "jsx": "react-jsx", // 关键：支持 React 17+ 的自动 JSX 转换（无需引入 React）
+    "strict": true, // 开启严格模式（推荐，强制类型检查）
+    "esModuleInterop": true, // 兼容 CommonJS/ES 模块
+    "skipLibCheck": true, // 跳过第三方库的类型检查（加快编译）
+    "forceConsistentCasingInFileNames": true, // 强制文件名大小写一致
+    "resolveJsonModule": true, // 支持导入 JSON 文件
+    "baseUrl": "./", // 基础路径
+    "paths": {
+      "@/*": [
+        "src/*"
+      ] // 可选：路径别名（如 @/App 指向 src/App.tsx）
+    },
+    "outDir": "./dist", // TS 编译输出目录（和 Webpack output 对齐）
+    "rootDir": "./src" // 源码根目录
+  },
+  "include": [
+    "src/**/*" // 要编译的文件（所有 src 下的 .ts/.tsx/.js/.jsx）
+  ],
+  "exclude": [
+    "node_modules", // 排除 node_modules
+    "dist" // 排除输出目录
+  ]
+}

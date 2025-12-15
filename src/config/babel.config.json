@@ -1,0 +1,15 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env", // 新增：转译 ES6+ 语法，处理 ! 非空断言
+    ],
+    [
+      "@babel/preset-react",
+      { "runtime": "automatic" }
+    ],
+    [
+      "@babel/preset-typescript",
+      { "allExtensions": true, "isTSX": true } // 关键：支持 .jsx 文件解析 TS 语法（如 !）
+    ]
+  ]
+}
