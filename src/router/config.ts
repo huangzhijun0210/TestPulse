@@ -10,12 +10,12 @@ export const routerData = {
         path: '/admin_manage',
         hasMenu: true,
     },
-    corret_exam: { // 页面8： 批改试卷（管理员）
-        path: '/corret_exam/:exam_id',
+    correct_exam: { // 页面8： 批改试卷（管理员）
+        path: '/correct_exam/:exam_id',
         hasMenu: true,
     },
-    corret_exam_list: { // 页面7： 批阅试卷列表（管理员）
-        path: '/corret_exam_list',
+    correct_exam_list: { // 页面7： 批阅试卷列表（管理员）
+        path: '/correct_exam_list',
         hasMenu: false,
     },
     exam: { // 页面4： 考试 (学生)
@@ -62,7 +62,7 @@ export const studentMenus = [{
 
 export const adminMenus = [{
     label: '阅卷列表',
-    key: 'corret_exam_list',
+    key: 'correct_exam_list',
 }, {
     label: '考题管理',
     key: 'subject_add',
@@ -76,7 +76,7 @@ export const adminMenus = [{
 
 export const superAdminMenus = [{
     label: '阅卷列表',
-    key: 'corret_exam_list',
+    key: 'correct_exam_list',
 }, {
     label: '考题管理',
     key: 'subject_add',
