@@ -38,4 +38,10 @@ module.exports = {
         },
         extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'], // 优先尝试 .tsx,ts再jsx,js
     },
+    output: {
+        path: path.resolve(__dirname, '../../dist'),
+        filename: '[name].[contenthash].bundle.js',
+        // 设为绝对路径 /，解决动态路由相对路径出错的问题
+        publicPath: '/',
+    },
 }

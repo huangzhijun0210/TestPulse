@@ -4,14 +4,13 @@ function useIsShowMenu() {
 
     const location = useLocation();
 
-    Object.entries(routerData as routerType).forEach(([key, route]) => {
-        if (location.pathname.split('/')[1] === key) {
-            return route.hasMenu;
-        }
+
+    const router = Object.entries(routerData as routerType).find(([key, route]) => {
+        return location.pathname.split('/')[1] === key  // 匹配到则返回 true，find 会终止并返回该 [key, route]
     });
 
-    //登录页不显示
-    return false;
+    const isShow = router ? router[1].hasMenu : false;
+    return isShow;
 }
 
 export default useIsShowMenu;
