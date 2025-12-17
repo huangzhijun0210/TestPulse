@@ -5,7 +5,11 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 
 module.exports = merge(commonConfig, {
     mode: 'development',
-    plugins:[
+    output: {
+        path: path.resolve(__dirname, '../../dist'),
+        filename: '[name].[contenthash].bundle.js',
+    },
+    plugins: [
         new ReactRefreshWebpackPlugin({
             overlay: false,
         }),
@@ -30,4 +34,16 @@ module.exports = merge(commonConfig, {
             }
         ]
     },
+    devServer: {
+        proxy: [
+            {
+                context: '/api',
+                target: 'http://localhost:3000',
+                pathRewrite: { '^/api': '' },
+            }
+        ],
+        //兼容前端浏览器路由，解决开发环境下刷新 / 直接访问子路由的 404 问题
+        historyApiFallback: true,
+    },
+
 })

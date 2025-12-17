@@ -274,3 +274,15 @@ declare interface VitePreloadErrorEvent extends Event {
 declare interface WindowEventMap {
   'vite:preloadError': VitePreloadErrorEvent
 }
+
+// src/declarations.d.ts
+declare module '*.scss' {
+  const classes: { [key: string]: string };
+  export default classes;
+}
+
+// 若同时用 CSS 文件，补充：
+declare module '*.css' {
+  const classes: { [key: string]: string };
+  export default classes;
+}
