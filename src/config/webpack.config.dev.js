@@ -41,7 +41,7 @@ module.exports = merge(commonConfig, {
         //兼容前端浏览器路由，解决开发环境下刷新 / 直接访问子路由的 404 问题
         historyApiFallback: true,
         static: {
-            directory: path.join(__dirname, '../../public'),  //静态资源路径
+            directory: path.join(__dirname, '../public'),  //静态资源路径
             publicPath: '/'  // 设为绝对路径 /，解决动态路由相对路径出错的问题
         },
     },

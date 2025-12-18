@@ -43,6 +43,20 @@ module.exports = {
                     'sass-loader'
                 ]
             },
+            //处理 SVG/图片的 loader 规则
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i, // 匹配所有图片格式
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            // 配置输出name和输出路径
+                            name: '[name].[hash:8].[ext]',
+                            outputPath: 'assets'
+                        }
+                    }
+                ]
+            }
         ]
     },
     resolve: {
