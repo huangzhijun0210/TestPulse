@@ -12,9 +12,13 @@ function Layout() {
     return (
         <>
             <div className={styles.layout}>
-                {isShowHeader === true ? (<header><Header /></header>) : null}
+                {isShowHeader === true ? (<header className={styles.header}><Header /></header>) : null}
                 {isShowMenu === true ? (<nav><Menu /></nav>) : null}
-                <div><Outlet /></div>
+                <div className={styles.outlet}>
+                    <div className={styles.content}>
+                        <Outlet />
+                    </div>
+                </div>
             </div>
         </>
     )

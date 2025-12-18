@@ -1,6 +1,97 @@
 .layout {
+
+    box-sizing: border-box; // 全局盒模型
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    //头部导航栏
     header {
         width: 100%;
-        background-color: pink;
+        height: 64px;
+        opacity: 1;
+        background: #FFFFFF;
+        padding: 0 73px 0 80px;
+        box-sizing: border-box;
+        display: flex; // 可选：让 header 内部元素排版更可控
+        align-items: center;
+        justify-content: space-between;
+
+        .logo {
+            display: flex;
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .logo_text {
+                display: flex;
+                flex-direction: column;
+
+                div:nth-child(1) {
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: #3A3D40
+                }
+
+                div:nth-child(2) {
+                    padding-left: 3px;
+                    font-size: 8px;
+                    color: #9FA3A7
+                }
+            }
+        }
+
+        .information {
+            display: flex;
+            align-items: center;
+
+            .person,
+            .massage {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                background-color: #F2F4F7;
+                border-radius: 50%;
+
+                img {
+                    width: 26px;
+                    height: 26px;
+                }
+            }
+        }
+
+    }
+
+    //菜单
+    nav {
+        .menus {
+            box-sizing: border-box;
+            width: 100%;
+            height: auto;
+            padding: 20px 120px 0 120px;
+
+            :global(.ant-menu),
+            :global(.ant-menu-horizontal) {
+                border-radius: 8px;
+            }
+        }
+    }
+
+    //outlet
+    .outlet {
+        box-sizing: border-box;
+        width: 100%;
+        flex: 1;
+        padding: 0 120px 20px 120px;
+
+        .content {
+            width: 100%;
+            height: 100%;
+        }
     }
 }
