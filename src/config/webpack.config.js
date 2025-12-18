@@ -26,7 +26,20 @@ module.exports = {
                 include: path.resolve(__dirname, '../../src'),
                 use: [
                     MiniCssExtractPlugin.loader,
-                    'css-loader',
+                    {
+                        //控制 CSS 模块化
+                        loader: 'css-loader',
+                        options: {
+                            //css 里通过 @import 引入的其他样式文件，也能按顺序经过前面 1 个 loader 处理
+                            importLoaders: 1,
+                            modules: {
+                                auto: true, //只给 .module.文件开模块化
+                                localIdentName: '[local]__[hash:base64:5]', //生成的类名格式(例：.layout__8f2d1)
+                                exportLocalsConvention: 'asIs', //SCSS 里写啥类名，JS 里就得用啥名
+                                namedExport: false  //是否禁用默认的默认导出
+                            }
+                        }
+                    },
                     'sass-loader'
                 ]
             },
