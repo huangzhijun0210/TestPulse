@@ -1,22 +1,20 @@
 import React from 'react';
-import { Alert, Flex, Spin } from 'antd';
+import { Spin } from 'antd';
 
-const contentStyle: React.CSSProperties = {
-  padding: 50,
-  background: 'white',
-  borderRadius: 4,
+const containerStyle: React.CSSProperties = {
+  position: 'fixed',
+  inset: 0,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+
 };
 
-const content = <div style={contentStyle} />;
-
 const App: React.FC = () => (
- 
-    <Flex gap="middle">
-      <Spin tip="加载中" size="large">
-        {content}
-      </Spin>
-    </Flex>
-
+  <div style={containerStyle}>
+    <Spin size="large" tip="Loading...">
+    </Spin>
+  </div>
 );
 
 export default App;

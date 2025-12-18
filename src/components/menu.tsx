@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
-import { adminMenus } from '@/router/config';
+import { adminMenus,superAdminMenus } from '@/router/config';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styles from '@/layout.module.scss'
 
 type MenuItem = Required<MenuProps>['items'][number];
-const items: MenuItem[] = adminMenus;
+const items: MenuItem[] = superAdminMenus;
 
 
 const App: React.FC = () => {
