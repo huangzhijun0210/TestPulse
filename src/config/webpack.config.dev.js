@@ -34,8 +34,8 @@ module.exports = merge(commonConfig, {
         proxy: [
             {
                 context: '/api',
-                target: 'http://localhost:3000',
-                pathRewrite: { '^/api': '' },
+                target: 'http://localhost:7001',
+                //pathRewrite: { '^/api': '' },
             }
         ],
         //兼容前端浏览器路由，解决开发环境下刷新 / 直接访问子路由的 404 问题
